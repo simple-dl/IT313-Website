@@ -188,9 +188,10 @@ body{
 }
 
 .august{
-    color: maroon;
+    color: darkgreen;
     font-family: 'Bungee', cursive;
     text-align: center;
+    
 }
 
 .september{
@@ -226,7 +227,8 @@ body{
 }
 
 #a{
-    font-size:35px;
+    font-size:60px;
+    font-weight: bold;
 }
 #s{
     font-size:35px;
@@ -425,5 +427,4 @@ body{
 
 
 }
-
 
