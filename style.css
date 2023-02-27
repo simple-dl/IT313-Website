@@ -28,7 +28,7 @@ body{
 .calendar{
     display:flex;
     flex-direction: column;
-    width:1600px;
+    width:1200px;
 }
 .week{
     display:flex;
@@ -38,8 +38,8 @@ body{
 .day {
     background-color: white;
     border: 1px solid black;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     float: left;
     text-align:start;
 }
