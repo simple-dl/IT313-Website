@@ -76,4 +76,44 @@ body{
 }
 
 
+/** Start of avaible plants**/
+.plantsImg{
+    display: flex;
+    margin: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+}
+
+.radish:hover{
+    border: 3px solid  rgb(225, 110, 22);
+}
+
+.imgtitle{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(225, 110, 22);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.radishpreset{
+    display:none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+    color: darkgreen;
+    border: 3px solid cornflowerblue ;
+    width: 500px;
+}
+
+.presets{
+    display:flex;
+    font-size: 30px;
+    font-family:monospace;
+    font-weight:bold;
+}
+
+
+
 
