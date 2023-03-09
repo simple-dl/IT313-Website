@@ -186,6 +186,9 @@ button {
     padding: 16px;
     width:300px;
   }
+   .input{
+      width:200px;
+   }
   
   /* The "Forgot password" text */
   span.psw {
