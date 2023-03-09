@@ -184,6 +184,7 @@ button {
   /* Add padding to containers */
   .container {
     padding: 16px;
+    width:300px;
   }
   
   /* The "Forgot password" text */
