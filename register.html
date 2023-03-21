@@ -46,6 +46,43 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 
 
+  <script>
+  function validateForm() {
+    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const hasCharacterRegex = /[a-zA-Z]/;
+
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return false;
+    }
+
+    if (username.length < 1) {
+      alert('Please enter a username.');
+      return false;
+    }
+
+    if (password.length < 8 || !hasCharacterRegex.test(password)) {
+      alert('Password must be at least 8 characters long and contain at least one letter.');
+      return false;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match. Please re-enter your password.');
+      return false;
+    }
+
+    return true;
+  }
+</script>
+</head>
+<body>
+  
+  
 
 
     <form action="createAccount.php" method="post" onsubmit="return validateForm()">
