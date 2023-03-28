@@ -129,9 +129,12 @@ button {
 
 .connection{
    display:flex;
-   justify-content: center;
+   justify-content: space-between;
    align-items: center;
    text-align:center;
+   font-size: 60px;
+   color:lightgreen;
+   
 }
   
   /* Change styles for span and cancel button on extra small screens */
