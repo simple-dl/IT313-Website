@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
+<script src="greenFunctions.js"></script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -41,7 +42,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU" alt="Trulli" style="width:260px">
         <figcaption class="imgtitle">Radish</figcaption>
         <p>
-        <button type="button" onclick="window.location.href='youPlant.html'" class="createbtn">Select Plant</button>
+        <button type="button" class="createbtn" id="radishBtn" onclick="btnModal('radishModal')">Select Plant</button>
         </p>
       </figure>
 
@@ -50,7 +51,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <img src="https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843" alt="Trulli" style="width:220px">
         <figcaption class="imgtitle">Broccoli</figcaption>
         <p>
-        <button type="button" onclick="window.location.href='youPlant.html'" class="createbtn">Select Plant</button>
+        <button type="button" onclick="btnModal('broccoliModal')" class="createbtn" id="broccoli">Select Plant</button>
         </p>
       </figure>
 
@@ -58,9 +59,44 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <img src="https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg" alt="Trulli" style="width:200px">
         <figcaption class="imgtitle">Cabbage</figcaption>
         <p>
-        <button type="button" onclick="window.location.href='youPlant.html'" class="createbtn">Select Plant</button>
+        <button type="button" onclick="btnModal('cabbageModal')" class="createbtn" id="cabbage">Select Plant</button>
         </p>
       </figure>
+    </div>
+
+    <!-- The Modal -->
+    <div id="radishModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="modalClose('radishModal')">&times;</span>
+        <h3>Radish</h3>
+        <p>How Many Days Covered: </p>
+        <p>Water Per Week: </p>
+        <p>Days to Grow: </p>
+        <button class="buttonBlack" onclick="window.location.href='youPlant.html'">Confirm Plant</button>
+      </div>
+    </div>
+
+    <div id="broccoliModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="modalClose('broccoliModal')">&times;</span>
+        <h3>Broccoli</h3>
+        <p>How Many Days Covered: </p>
+        <p>Water Per Week: </p>
+        <p>Days to Grow: </p>
+        <button class="buttonBlack" onclick="window.location.href='youPlant.html'">Confirm Plant</button>
+      </div>
+    </div>
+
+    <div id="cabbageModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="modalClose('cabbageModal')">&times;</span>
+        <h3>Cabbages</h3>
+        <p>How Many Days Covered: </p>
+        <p>Water Per Week: </p>
+        <p>Days to Grow: </p>
+        <button class="buttonBlack" onclick="window.location.href='youPlant.html'">Confirm Plant</button>
+      </div>
     </div>
 
     <div class="radishpreset">
