@@ -126,15 +126,24 @@ button {
     float: right;
     padding-top: 16px;
   }
-
 .connection{
    display:flex;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
    text-align:center;
-   font-size: 60px;
-   color:lightgreen;
+   font-size: 40px;
+   width: 400px;
+   color:black;
+   background-color: rgb(99, 241, 99);
    
+}
+
+.move{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding:30px;
+
 }
   
   /* Change styles for span and cancel button on extra small screens */
