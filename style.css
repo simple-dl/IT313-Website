@@ -21,10 +21,18 @@ body{
 }
 
 .imgtitle{
+  
     text-align: center;
     font-size: 30px;
     color: rgb(225, 110, 22);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.radish{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .radishpreset{
@@ -97,7 +105,11 @@ button {
   .createbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: rgb(26, 120, 175);
+    background-color:rgb(61, 202, 43);
+    color: black;
+    font-size: 20px;
+    font-weight:bold;
+
   }
 
   /* Center the avatar image inside this container */
@@ -126,6 +138,7 @@ button {
     float: right;
     padding-top: 16px;
   }
+
 .connection{
    display:flex;
    justify-content: center;
@@ -143,9 +156,8 @@ button {
   justify-content: center;
   align-items: center;
   padding:30px;
-
 }
-  
+
   /* Change styles for span and cancel button on extra small screens */
   @media screen and (max-width: 300px) {
     span.psw {
@@ -221,4 +233,8 @@ button {
   background-color: #080808;
   color: white;
 }
+
+
+
+
 
