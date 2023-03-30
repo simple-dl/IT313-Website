@@ -65,6 +65,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    text-align:center;
     font-size:20px;
     padding:30px;
     margin:10px; 
