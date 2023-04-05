@@ -78,6 +78,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         ?>
         </p>
        <button class="buttonBlack" name="radishConfirm">Confirm Plant</button>
+
+  <button id="myButton">Click me!</button>
+
+
       </div>
     </div>
    </form>
@@ -102,6 +106,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
     </form>
 
+  
+    
+
     <form action="addCabbage.php" method="post">
     <div id="cabbageModal" class="modal">
       <div class="modal-content">
@@ -125,5 +132,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       </div>
     </div>
     </form>
+
+
+<script>
+  function displayMessage() {
+    alert("Plant Selected");
+  }
+
+  var buttonBlack = document.getElementById("buttonBlack");
+  buttonBlack.addEventListener("click", displayMessage);
+</script>
 
   </body>
