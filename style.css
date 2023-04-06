@@ -10,7 +10,7 @@ body{
 /** Start of avaible plants**/
 .plantsImg{
     display: flex;
-    margin: 100px;
+    margin: 50px;
     justify-content: space-evenly;
     align-items: center;
     align-content: space-between;
