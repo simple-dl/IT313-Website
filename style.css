@@ -211,6 +211,7 @@ button {
 .modal-content {
   background-color: #fefefe; /* 15% from the top and centered */
   font-size: 40px;
+  margin: 40%; 
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
@@ -233,6 +234,7 @@ button {
 .buttonBlack {
   background-color: white;
   color: black;
+  width: fit-content;
   border: 2px solid #080808;
 }
 
