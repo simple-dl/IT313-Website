@@ -113,7 +113,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div id="cabbageModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="modalClose('cabbageModal')">&times;</span>
-        <h3 class="preTitle">Cabbages</h3>
+        <h3 class="preTitle">Cabbage</h3>
 
 
         <p>
