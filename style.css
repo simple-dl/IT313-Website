@@ -192,7 +192,6 @@ button {
   from {transform: scale(0)} 
   to {transform: scale(1)}
 }
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -209,9 +208,9 @@ button {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe; /* 15% from the top and centered */
-  font-size: 40px;
-  margin: 40px; 
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
