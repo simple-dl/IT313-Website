@@ -69,7 +69,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close" onclick="modalClose('radishModal')">&times;</span>
-        <h3>Radish</h3>
+        <h3 class="preTitle">Radish</h3>
 
         <p>
         <?php
@@ -90,7 +90,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div id="broccoliModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="modalClose('broccoliModal')">&times;</span>
-        <h3>Broccoli</h3>
+        <h3 class="preTitle">Broccoli</h3>
 
         <p>
         <?php
@@ -113,7 +113,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div id="cabbageModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="modalClose('cabbageModal')">&times;</span>
-        <h3>Cabbages</h3>
+        <h3 class="preTitle">Cabbages</h3>
 
 
         <p>
