@@ -211,7 +211,7 @@ button {
 .modal-content {
   background-color: #fefefe; /* 15% from the top and centered */
   font-size: 40px;
-  margin: 40%; 
+  margin: 40px; 
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
