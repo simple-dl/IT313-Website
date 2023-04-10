@@ -57,6 +57,8 @@ if (isset($_POST['radishConfirm'])) {
 
     } else {
        header("Location: availablePlant.php");
+       echo "<script type = 'text/javascript'> window.onload = function() { alert('Shelves are Full!');}
+              </script>"; 
        exit();
     }
 
