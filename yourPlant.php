@@ -48,7 +48,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
                 echo  " <p>";
-                echo " <h5 class='w3-padding-32'>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
                 echo " </p>";
                 echo " </figure>";
         } elseif ($result['preset_id_shelf1'] == 2) {
@@ -59,7 +59,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
                 echo  " <p>";
-                echo " <h5 class='w3-padding-32'>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo " <h5 >Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
                 echo " </p>";
                 echo " </figure>";
         } elseif ($result['preset_id_shelf1'] == 3) {
@@ -69,7 +69,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
                 echo  " <p>";
-                echo " <h5 class='w3-padding-32'>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
                 echo " </p>";
                 echo " </figure>";
         }
@@ -84,7 +84,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
                 echo  " <p>";
-                echo " <h5 class='w3-padding-32'>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo " <h5 >Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
                 echo " </p>";
                 echo " </figure>";
         } elseif ($result2['preset_id_shelf2'] == 2) {
@@ -94,7 +94,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
                 echo  " <p>";
-                echo " <h5 class='w3-padding-32'>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
                 echo " </p>";
                 echo " </figure>";
         } elseif ($result2['preset_id_shelf2'] == 3) {
@@ -104,7 +104,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
                 echo  " <p>";
-                echo " <h5 class='w3-padding-32'>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
                 echo " </p>";
                 echo " </figure>";
         }
