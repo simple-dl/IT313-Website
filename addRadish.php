@@ -21,14 +21,20 @@ if (isset($_POST['radishConfirm'])) {
 
         if (mysqli_query($conn, $sql)) {
 
-            header("Location: yourPlant.php");
+           echo "<script type = 'text/javascript'>";
+                echo "top.location.href = 'yourPlant.php';";
+                echo "alert('Plant Added');";
+                 echo "</script>";
             exit();
         } else {
             echo "Error updating database: " . mysqli_error($conn);
         }
 
         if (mysqli_query($conn, $sql2)) {
-            header("Location: yourPlant.php");
+          echo "<script type = 'text/javascript'>";
+                echo "top.location.href = 'yourPlant.php';";
+                echo "alert('Plant Added');";
+                 echo "</script>";
             exit();
         } else {
             echo "Error updating database: " . mysqli_error($conn);
@@ -41,14 +47,20 @@ if (isset($_POST['radishConfirm'])) {
 
 
         if (mysqli_query($conn, $sql)) {
-              header("Location: yourPlant.php");
+          echo "<script type = 'text/javascript'>";
+                echo "top.location.href = 'yourPlant.php';";
+                echo "alert('Plant Added');";
+                 echo "</script>";
             exit();
         } else {
             echo "Error updating database: " . mysqli_error($conn);
         }
 
         if (mysqli_query($conn, $sql2)) {
-            header("Location: yourPlant.php");
+               echo "<script type = 'text/javascript'>";
+                echo "top.location.href = 'yourPlant.php';";
+                echo "alert('Plant Added');";
+                 echo "</script>";
             exit();
         } else {
             echo "Error updating database: " . mysqli_error($conn);
@@ -56,10 +68,10 @@ if (isset($_POST['radishConfirm'])) {
 
 
     } else {
-       header("Location: availablePlant.php");
-       echo "<script type = 'text/javascript'> window.onload = function() { alert('Shelves are Full!');}
-              </script>"; 
-       exit();
+       echo "<script type = 'text/javascript'>";
+       echo "top.location.href = 'yourPlant.php';";
+       echo "alert('Shelves are Full!');";
+       echo "</script>";
     }
 
     mysqli_close($conn);
