@@ -56,7 +56,7 @@ if (isset($_POST['radishConfirm'])) {
 
 
     } else {
-       header("Location: yourPlant.php");
+       header("Location: availablePlant.php");
        exit();
     }
 
