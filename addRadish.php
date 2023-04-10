@@ -57,7 +57,7 @@ if (isset($_POST['radishConfirm'])) {
 
     } else {
        echo "Your shelves are Full!" 
-       header("Location: yourPlany.php");
+       header("Location: yourPlant.php");
        exit();
     }
 
