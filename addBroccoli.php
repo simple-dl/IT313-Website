@@ -15,7 +15,10 @@ if (isset($_POST['broccoliConfirm'])) {
         $sql = "UPDATE User SET preset_id_shelf1='2' WHERE username='".$_SESSION["username"]."'";
 
         if (mysqli_query($conn, $sql)) {
-            header("Location: yourPlant.php");
+         echo "<script type = 'text/javascript'>";
+                echo "top.location.href = 'yourPlant.php';";
+                echo "alert('Plant Added');";
+                 echo "</script>";
             exit();
         } else {
             echo "Error updating database: " . mysqli_error($conn);
@@ -24,7 +27,10 @@ if (isset($_POST['broccoliConfirm'])) {
         $sql = "UPDATE User SET preset_id_shelf2='2' WHERE username='".$_SESSION["username"]."'";
 
         if (mysqli_query($conn, $sql)) {
-            header("Location: yourPlant.php");
+           echo "<script type = 'text/javascript'>";
+                echo "top.location.href = 'yourPlant.php';";
+                echo "alert('Plant Added');";
+                 echo "</script>";
             exit();
         } else {
             echo "Error updating database: " . mysqli_error($conn);
