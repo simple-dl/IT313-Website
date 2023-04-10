@@ -30,7 +30,10 @@ if (isset($_POST['broccoliConfirm'])) {
             echo "Error updating database: " . mysqli_error($conn);
         }
     } else {
-       header("Location: availablePlant.php");
+       echo "<script type = 'text/javascript'>";
+       echo "alert('Shelves are Full!');";
+       echo "top.location.href = 'yourPlant.php';";
+       echo "</script>";
        exit();
     }
 
