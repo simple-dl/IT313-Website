@@ -208,13 +208,15 @@ button {
 
 /* Modal Content/Box */
 .modal-content {
-  font-size: 30px;
+  font-size: 27px;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 25px;
   border: 1px solid #888;
+  text-align:center;
   width: fit-content; /* Could be more or less, depending on screen size */
 }
+
 
 /* The Close Button */
 .close {
