@@ -75,6 +75,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <?php
         require 'front_connection.php';
         require 'radishDisplay.php';
+        require 'fullShelves.php';
         ?>
         </p>
        <button class="buttonBlack" name="radishConfirm">Confirm Plant</button>
