@@ -32,11 +32,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header class="w3-container w3-green w3-center" style="padding:50px 16px; border:2px solid black;">
   <h1 class="w3-margin w3-jumbo">Profile</h1>
 </header>
+ 
+<div class="imgcontainer">
+  <img src="https://www.kindpng.com/picc/m/285-2856724_user-avatar-enter-free-photo-user-avatar-green.png" alt="Avatar" class="avatar">
+</div>
 
 <?php
 session_start();
 
-echo "<h1> Hello, " .  $_SESSION['username'] . "!</h1>" ;
+echo "<h1 style=\"text-align:center\"> Hello, " .  $_SESSION['username'] . "!</h1>" ;
 
 ?>
 </body>
