@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Righteous&display=swap');
+body{
+   margin:0px;
+    background-color:ffffff;
+    height: 100vh;
+}
+
+
+
+/** Start of avaible plants**/
+.plantsImg{
+    display: flex;
+    margin: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+}
+
+.radish:hover{
+    border: 3px solid  rgb(225, 110, 22);
+}
+
+.imgtitle{
+  
+    text-align: center;
+    font-size: 30px;
+    color: rgb(225, 110, 22);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.radish{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.radish2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.radishpreset{
+    display:none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+    color: darkgreen;
+    border: 3px solid cornflowerblue ;
+    width: 500px;
+}
+
+.presets{
+    display:flex;
+    font-size: 30px;
+    font-family:monospace;
+    font-weight:bold;
+}
+
+/** start of profil **/
+.imgcontainer{
+    display:flex;
+    justify-content: center;
+    padding:20px;
+} 
+
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align:center;
+    font-size:20px;
+    padding:30px;
+    margin:10px; 
+}
+
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+  }
+button {
+   width:200px;
+}
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+
+  /* Extra style for the create button (blue) */
+  .createbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color:rgb(61, 202, 43);
+    color: black;
+    font-size: 20px;
+    font-weight:bold;
+
+  }
+
+  /* Center the avatar image inside this container */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Avatar image */
+  img.avatar {
+    width: 10%;
+    border-radius: 50%;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+
+  }
+   .input{
+      width:200px;
+   }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+
+.connection{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   text-align:center;
+   font-size: 40px;
+   width: 400px;
+   color:black;
+   background-color: rgb(99, 241, 99);
+   
+}
+
+.move{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding:30px;
+}
+
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+
+  /* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  font-size: 27px;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 25px;
+  border: 1px solid #888;
+  text-align:center;
+  width: fit-content; /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttonBlack {
+  background-color: white;
+  color: black;
+  width: fit-content;
+  border: 2px solid #080808;
+}
+
+.buttonBlack:hover {
+  background-color: #080808;
+  color: white;
+}
+
+.shelves{
+   text-align: center;
+}
+
+
+
+
+
+
