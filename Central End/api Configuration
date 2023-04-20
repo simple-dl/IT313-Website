@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+    ServerName grubbingreen.com
+
+   # SSLEngine On
+   # SSLCertificateFile /etc/letsencrypt/live/grubbingreen.com/fullchain.pem
+   # SSLCertificateKeyFile /etc/letsencrypt/live/grubbingreen.com/privkey.pem
+    WSGIScriptAlias /api /var/www/html/api.wsgi
+    <Directory /var/www/html>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    ProxyPass /api http://172.31.81.120:5000/api
+    ProxyPassReverse /api http://172.31.81.120:5000/api
+</VirtualHost>
+
