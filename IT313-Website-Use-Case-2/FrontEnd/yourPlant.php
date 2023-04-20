@@ -42,6 +42,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         session_start();
         $sql = "SELECT preset_id_shelf1 FROM User WHERE username ='".$_SESSION['username']."'";
         $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+        
         if ($result['preset_id_shelf1'] == 1) {
                 echo "<div class='plantsImg'>";
                 echo " <figure  class = 'radish2' >";
@@ -49,7 +50,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
                 echo  " <p>";
-                echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                //for sensor reading
+                if(isset($_POST['checkSensor'])) {
+                	$shelf1 = "SELECT * FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
+                	echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                }
                 echo "<button id='myButton' onclick='sendData(1)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
                 echo " </p>";
@@ -61,7 +66,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
                 echo  " <p>";
-                echo " <h5 >Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                if(isset($_POST['checkSensor'])) {
+                	echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                }
                 echo "<button id='myButton' onclick='sendData(2)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
                 echo " </p>";
@@ -73,7 +80,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " <img src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
                 echo  " <p>";
-                echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                if(isset($_POST['checkSensor'])) {
+                	echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                }
                 echo "<button id='myButton' onclick='sendData(3)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
                 echo " </p>";
@@ -120,6 +129,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo " </figure>";
         }
 ?>
+
+	<form method="post">
+		<input type="submit" name="checkSensor" value="checkSensor">
+	</form>
         <script>
         function sendData2(presetID) {
 
