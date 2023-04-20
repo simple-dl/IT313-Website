@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Grubbing Greens Homepage</title>
@@ -13,6 +13,7 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+.hide {display: none}
 </style>
 </head>
 <body>
@@ -25,6 +26,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="availablePlant.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Available plants</a>
     <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Profile</a>
      <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-display-topright">Logout</a>
+    <!---<link href='https://css.gg/profile.css' rel='stylesheet'> --->
   </div>
 
 <!-- Header -->
@@ -40,45 +42,41 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         session_start();
         $sql = "SELECT preset_id_shelf1 FROM User WHERE username ='".$_SESSION['username']."'";
         $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-        echo "<script>function checkWater(id) {
-                id.style.display = \"block\";
-                }</script>";
         if ($result['preset_id_shelf1'] == 1) {
                 echo "<div class='plantsImg'>";
                 echo " <figure  class = 'radish2' >";
-                echo "<h2 class='shelves'> Shelf 1 <h2>"; 
+                echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
                 echo  " <p>";
-                echo "<h4 id = \"water\" style= display:none class=\"w3-center\">Your water tank is empty. Please refill it immediately!</h4>";
                 echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo "<button id='myButton' onclick='sendData(1)'>Initiate Preset</button>";
+                echo "<div id='status'></div>";
                 echo " </p>";
-                echo "<button onclick= \"checkWater(water)\">Check Water</button>";
                 echo " </figure>";
         } elseif ($result['preset_id_shelf1'] == 2) {
                 echo "<div class='plantsImg'>";
-        
                 echo " <figure  class = 'radish2' >";
-                 echo "<h2 class='shelves'> Shelf 1 <h2>"; 
+                echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
                 echo  " <p>";
-                echo "<h4 id = \"water\" style= display:none class=\"w3-center\">Your water tank is empty. Please refill it immediately!</h4>";
                 echo " <h5 >Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo "<button id='myButton' onclick='sendData(2)'>Initiate Preset</button>";
+                echo "<div id='status'></div>";
                 echo " </p>";
-                echo "<button onclick= \"checkWater(water)\">Check Water</button>";
                 echo " </figure>";
         } elseif ($result['preset_id_shelf1'] == 3) {
                 echo "<div class='plantsImg'>";
                 echo " <figure  class = 'radish2' >";
-                echo "<h2 class='shelves'> Shelf 1 <h2>"; 
+                echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
                 echo  " <p>";
-                echo "<h4 id = \"water\" style= display:none class=\"w3-center\">Your water tank is empty. Please refill it immediately!</h4>";
                 echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo "<button id='myButton' onclick='sendData(3)'>Initiate Preset</button>";
+                echo "<div id='status'></div>";
                 echo " </p>";
-                echo "<button onclick= \"checkWater(water)\">Check Water</button>";
                 echo " </figure>";
         }
 
@@ -88,41 +86,113 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
  if ($result2['preset_id_shelf2'] == 1) {
                 echo "<div class='plantsImg'>";
                 echo " <figure  class = 'radish2' >";
-                echo "<h2 class='shelves'> Shelf 2 <h2>"; 
+                echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
                 echo  " <p>";
-                echo "<h4 id = \"water2\" style= display:none class=\"w3-center\">Your water tank is empty. Please refill it immediately!</h4>";
-                echo " <h5 >Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo "<button id='myButton2' onclick='sendData2(1)'>Initiate Preset</button>";
+                echo "<div id='status2'></div>";
                 echo " </p>";
-                echo "<button onclick= \"checkWater(water2)\">Check Water</button>";
                 echo " </figure>";
         } elseif ($result2['preset_id_shelf2'] == 2) {
                 echo "<div class='plantsImg'>";
                 echo " <figure  class = 'radish2' >";
-                echo "<h2 class='shelves'> Shelf 2 <h2>"; 
+                echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
                 echo  " <p>";
-                echo "<h4 id = \"water2\" style= display:none class=\"w3-center\">Your water tank is empty. Please refill it immediately!</h4>";
-                echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+               echo "<button id='myButton2' onclick='sendData2(2)'>Initiate Preset</button>";
+                echo "<div id='status2'></div>";
                 echo " </p>";
-                echo "<button onclick= \"checkWater(water2)\">Check Water</button>";
                 echo " </figure>";
         } elseif ($result2['preset_id_shelf2'] == 3) {
                 echo "<div class='plantsImg'>";
                 echo " <figure  class = 'radish2' >";
-                echo "<h2 class='shelves'> Shelf 2 <h2>"; 
+                echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
                 echo  " <p>";
-                echo "<h4 id = \"water2\" style= display:none class=\"w3-center\">Your water tank is empty. Please refill it immediately!</h4>";
                 echo " <h5>Humidity:10% <br>Temperature:60 </br>Moisture: not detected</h5>";
+                echo "<button id='myButton2' onclick='sendData2(3)'>Initiate Preset</button>";
+                echo "<div id='status2'></div>";
                 echo " </p>";
-                echo "<button onclick= \"checkWater(water2)\">Check Water</button>";
                 echo " </figure>";
         }
-
-
-
 ?>
+        <script>
+        function sendData2(presetID) {
+
+        var button = document.getElementById('myButton2');
+        button.classList.add('hide');
+
+        const statusEl = document.getElementById('status2');
+        statusEl.textContent = 'Please wait...';
+
+        fetch('http://grubbingreen.com/api', {
+        method: 'POST',
+        headers: {
+           'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+          preset_id: presetID
+         })
+        })
+        .then((response) => response.json())
+        .then((data) => {
+        if (data.message === 'Success') {
+        statusEl.textContent = 'Initialization successful!';
+        setTimeout(() => {
+        statusEl.textContent = '';
+         }, 5000);
+        } else {
+         statusEl.textContent = 'Initialization failed';
+         setTimeout(() => {
+         statusEl.textContent = '';
+         }, 5000);
+        }
+        })
+        .catch((error) => {
+        statusEl.textContent = 'Error fetching status: Check if the API servers are running';
+         });
+      }
+
+        function sendData(presetID) {
+
+        var button = document.getElementById('myButton');
+        button.classList.add('hide');
+
+        const statusEl = document.getElementById('status');
+        statusEl.textContent = 'Please wait...';
+
+        fetch('http://grubbingreen.com/api', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+        preset_id: presetID
+        })
+        })
+        .then((response) => response.json())
+        .then((data) => {
+        if (data.message === 'Success') {
+        statusEl.textContent = 'Initialization successful!';
+        setTimeout(() => {
+        statusEl.textContent = '';
+        }, 5000);
+        } else {
+        statusEl.textContent = 'Initialization failed';
+        setTimeout(() => {
+        statusEl.textContent = '';
+        }, 5000);
+        }                                                                                                                                                                                                                  })
+                                                                                                                                                                                                                           .catch((error) => {
+                                                                                                                                                                                                                                   statusEl.textContent = 'Error fetching status: Check if the API servers are running';
+                                                                                                                                                                                                                                            });
+                    
+                                                                                                                                                                                                                                       }
+       </script>
+
+
+</html>
