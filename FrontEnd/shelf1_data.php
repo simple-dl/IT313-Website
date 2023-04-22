@@ -7,22 +7,22 @@ error_reporting(E_ALL);
 
 $conn = new mysqli('localhost', 'frontend', 'Frontend1$', 'plants');
 
-$sql = "SELECT humdity_percentage FROM self_readingtable WHERE username ='".$_SESSION['username']."'";
+$sql = "SELECT humidity_percentage FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
         $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 
-$result = mysqli_query($conn, $sql); 
+$result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) >= 0) {
 
         $row = mysqli_fetch_assoc($result);
-        echo "Humdity Percentage: <span> " . $row["humdity_percentage"]. " % </span> <br>";
+        echo "Humdity Percentage: <span> " . $row["humidity_percentage"]. " % </span> <br>";
 
 } else {
 
        echo "Humdity Percentage: No data Found. <br>";
 }
 
-$sql = "SELECT temperature_F FROM self_readingtable WHERE username ='".$_SESSION['username']."'";
+$sql = "SELECT temperature_F FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) >= 0) {
@@ -36,27 +36,22 @@ if (mysqli_num_rows($result) >= 0) {
 }
 
 
-$sql = "SELECT lights_on_off FROM self_readingtable WHERE username ='".$_SESSION['username']."'";
+$sql = "SELECT lights_off_on FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) == 0) {
+if (mysqli_num_rows($result) == 1) {
 
         $row = mysqli_fetch_assoc($result);
-        echo "Lights: ON"; 
-} else if (mysqli_num_rows($result) == 1){
+        echo "Lights: ON";
+} else if (mysqli_num_rows($result) == 0){
         $row = mysqli_fetch_assoc($result);
-        echo "Lights: OFF"; 
+        echo "Lights: OFF";
 
 } else {
 
        echo "Lights: No data Found. <br>";
-
 }
 
 
-
-mysqli_close($conn);
-
-
-
 ?>
+   
