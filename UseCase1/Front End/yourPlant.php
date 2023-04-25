@@ -17,6 +17,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </style>
 </head>
 <body>
+  
+  <!-- https://phppot.com/jquery/jquery-div-auto-load-and-refresh/ auto refresh-->
 
 <!-- Navbar -->
 <div class="w3-top">
