@@ -36,6 +36,19 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 
+//$sql = "SELECT temperature_F FROM shelf_reading WHERE username ='".$_SESSION['username']."'"; MOISTURE
+//$result = mysqli_query($conn, $sql);
+
+//if (mysqli_num_rows($result) > 0) {
+
+  //      $row = mysqli_fetch_assoc($result);
+ //       echo "Moisture: <span>" . $row["temperature_F"]. " &#176 </span> <br>";
+
+//} else {
+//
+ //      echo "Moisture: No data Found. <br>";
+//}
+
 $sql = "SELECT lights_off_on FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
 $result = mysqli_query($conn, $sql);
 
