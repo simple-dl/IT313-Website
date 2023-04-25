@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import mysql.connector
 import requests
+import socket
 
 app = Flask(__name__)
 
@@ -11,16 +12,16 @@ db = mysql.connector.connect(
         database="plants"
         )
 
-api_endpoint = "http://localhost:2222"
-
+api_endpoint = "http://166.159.66.153:5000"
+api_endpoint2 = "http://166.159.66.153:5001"
 
 @app.route('/api', methods=['POST'])
-def get_data():
+def send_data():
 
     print('Received POST request')
 
     data = request.get_json()
-    preset_id = data.get('preset_id', 4)
+    preset_id = data.get('preset_id')
     cursor = db.cursor()
     cursor.execute("SELECT length_planted, water_perday, light_perday, cover_perday FROM presets WHERE preset_id = %s", (preset_id,))
     result = cursor.fetchone()
@@ -28,15 +29,15 @@ def get_data():
 
     data_dict = {'length_planted': result[0], 'water_perday': result[1], 'light_perday': result[2], 'cover_perday': result[3]}
 
+    response2 = requests.post(api_endpoint2, json=data_dict)
     response = requests.post(api_endpoint, json=data_dict)
-    print(response)
-    if response.ok:
-        print("Data sent to API successfully")
-        return jsonify({"message": "Success"})
+    print(str(response) + " from Servo pi")
+    print(str(response2) + " from Water pi")
+    if response.ok and response2.ok:
+        print("Data sent to both API's successfully")
+        message = "Success"
     else:
-        print("Failed to send data to API")
-        return jsonify({"message": "Failed"})
+        print("Failed to send data")
+        message = "Initialization failed"
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
-
+    return jsonify({'message': message})
