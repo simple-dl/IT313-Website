@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
        echo "Humdity Percentage: No data Found. <br>";
 }
 
-$sql = "SELECT temperature_F FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
+$sql = "SELECT temperature_C FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -42,11 +42,11 @@ if (mysqli_num_rows($result) > 0) {
 //if (mysqli_num_rows($result) > 0) {
 
   //      $row = mysqli_fetch_assoc($result);
- //       echo "Moisture: <span>" . $row["temperature_F"]. " &#176 </span> <br>";
+ //       echo "Moisture: <span>" . $row[""]. "</span><br>";
 
 //} else {
 //
- //      echo "Moisture: No data Found. <br>";
+ //      echo "Moisture: No data found. <br>";
 //}
 
 $sql = "SELECT lights_off_on FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
