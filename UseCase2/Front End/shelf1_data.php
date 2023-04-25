@@ -38,7 +38,8 @@ if(is_null($row["lights_off_on"])) {
 }
 else if (mysqli_fetch_assoc($result) == 1) {
         echo "Lights: ON <br>";
-} else if (mysqli_fet  echo "Lights: OFF<br>";
+} else if (mysqli_fetch_assoc($result) == 0) {
+        echo "Lights: OFF<br>";
 
 }
 
