@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="style.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
@@ -15,9 +16,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
 .hide {display: none}
 </style>
+<script>
+$(document).ready(function() {
+        setInterval(function() {
+                $("#sensor").load('shelf1_data.php')
+        }, 10000);
+});
+</script>
 </head>
 <body>
-  
+
   <!-- https://phppot.com/jquery/jquery-div-auto-load-and-refresh/ auto refresh-->
 
 <!-- Navbar -->
@@ -30,7 +38,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
      <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-display-topright">Logout</a>
     <!---<link href='https://css.gg/profile.css' rel='stylesheet'> --->
   </div>
-
 <!-- Header -->
 <header class="w3-container w3-green w3-center" style="padding:50px 16px; border:2px solid black;">
   <h1 class="w3-margin w3-jumbo">Your Plants</h1>
@@ -50,27 +57,27 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img class='centerimg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
-                echo  " <p>";
-                echo "<div class = 'modal-content'>";
+
+                echo "<div id = 'sensor' class = 'modal-content'>";
                 include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton' onclick='sendData(1)'>Initiate Preset</button>";
+                echo "<button id='myButton' onclick='sendData(1)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
-                echo " </p>";
-                echo " </figure>";
+                echo "</figure>";
+
         } elseif ($result['preset_id_shelf1'] == 2) {
                 echo "<div class='plantsImg'>";
                 echo " <figure  class = 'radish2' >";
                 echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img class='centerimg' src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
-                echo  " <p>";
-                echo "<div class  ='modal-content'>";    
+
+                echo "<div id = 'sensor' class  ='modal-content'>";
                 include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton' onclick='sendData(2)'>Initiate Preset</button>";
+                echo "<button id='myButton' onclick='sendData(2)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         } elseif ($result['preset_id_shelf1'] == 3) {
                 echo "<div class='plantsImg'>";
@@ -78,13 +85,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img class='centerimg' src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
-                echo  " <p>";
-                echo "<div class = 'modal-content'>";
+
+                echo "<div id = 'sensor' class = 'modal-content'>";
                 include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton' onclick='sendData(3)'>Initiate Preset</button>";
+                echo "<button id='myButton' onclick='sendData(3)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         }
 
@@ -97,13 +104,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img class='centerimg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
-                echo  " <p>";
-                echo "<div class = 'modal-content'>";
+
+                echo "<div id = 'sensor' class = 'modal-content'>";
                 include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton2' onclick='sendData2(1)'>Initiate Preset</button>";
+                echo "<button id='myButton2' onclick='sendData2(1)'>Initiate Preset</button>";
                 echo "<div id='status2'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         } elseif ($result2['preset_id_shelf2'] == 2) {
                 echo "<div class='plantsImg'>";
@@ -111,13 +118,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img class='centerimg' src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
-                echo  " <p>";
-                echo "<div class = 'modal-content'>";
+
+                echo "<div id = 'sensor' class = 'modal-content'>";
                 include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton2' onclick='sendData2(2)'>Initiate Preset</button>";
+                echo "<button id='myButton2' onclick='sendData2(2)'>Initiate Preset</button>";
                 echo "<div id='status2'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         } elseif ($result2['preset_id_shelf2'] == 3) {
                 echo "<div class='plantsImg'>";
@@ -125,17 +132,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img class='centerimg' src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
-                echo  " <p>";
-                echo "<div class = 'modal-content'>";
+
+                echo "<div id = 'sensor' class = 'modal-content'>";
                 include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton2' onclick='sendData2(3)'>Initiate Preset</button>";
+                echo "<button id='myButton2' onclick='sendData2(3)'>Initiate Preset</button>";
                 echo "<div id='status2'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         }
 ?>
-        <script>
+   <script>
         function sendData2(presetID) {
 
         var button = document.getElementById('myButton2');
@@ -174,7 +181,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
         function sendData(presetID) {
 
-        var button = document.getElementById('myButton');
+          var button = document.getElementById('myButton');
         button.classList.add('hide');
 
         const statusEl = document.getElementById('status');
@@ -201,13 +208,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         setTimeout(() => {
         statusEl.textContent = '';
         }, 5000);
-        }                                                                                                                                                                                                                  })
-                                                                                                                                                                                                                           .catch((error) => {
-                                                                                                                                                                                                                                   statusEl.textContent = 'Error fetching status: Check if the API servers are running';
-                                                                                                                                                                                                                                            });
-                    
-                                                                                                                                                                                                                                       }
+        }                                                                                                                                                 
+})
+  .catch((error) => {
+        statusEl.textContent = 'Error fetching status: Check if the API servers are running';
+        });
+                              
+        }
        </script>
 
 
 </html>
+                                                                                                                                                                                         222,2         Bot                                                                                           
+          
+                                                                                                                                                                                         106,2         39%                                                         
+          
