@@ -43,6 +43,33 @@ else if (mysqli_fetch_assoc($result) == 1) {
 
 }
 
+$sql = "SELECT moisture_detected FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result); // fetch result once and store in variable
+
+if(is_null($row["moisture_detected"])) {
+        echo "Moisture:<span style='color: red;'> No data found. <br></span>";
+}
+else if (mysqli_fetch_assoc($result) == 1) {
+        echo "Moisture: Detected <br>";
+} else if (mysqli_fetch_assoc($result) == 0) {
+        echo "Moisture: Not Detected <br>";
+
+}
+
+$sql = "SELECT cover_up_down FROM shelf_reading WHERE username ='".$_SESSION['username']."'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+if(is_null($row["cover_up_down "])) {
+        echo "Cover:<span style='color: red;'> No data found. <br></span>";
+}
+else if (mysqli_fetch_assoc($result) == 1) {
+        echo "Cover: UP <br>";
+} else if (mysqli_fetch_assoc($result) == 0) {
+        echo "Cover: Down<br>";
+
+}
+
 ?>
                                                                                                                                                                                          47,2          Botch_assoc($result) == 0){
         
