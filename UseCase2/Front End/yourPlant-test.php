@@ -16,13 +16,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
 .hide {display: none}
 </style>
-<script>
-$(document).ready(function() {
-        setInterval(function() {
-		$("#sensor").load('shelf1_data.php')
-	}, 10000);
-});
-</script>
 </head>
 <body>
   
@@ -144,6 +137,13 @@ $(document).ready(function() {
         }
 ?>
         <script>
+        
+        $(document).ready(function() {
+        setInterval(function() {
+		$("#sensor").load('shelf1_data.php')
+	}, 10000);
+	});
+        
         function sendData2(presetID) {
 
         var button = document.getElementById('myButton2');
