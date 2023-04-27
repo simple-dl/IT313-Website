@@ -71,5 +71,5 @@ else if (mysqli_fetch_assoc($result) == 1) {
 }
 
 ?>
-                                                                                                                                                                                         47,2          Botch_assoc($result) == 0){
+                                                                                                                                                                                         
         
