@@ -138,11 +138,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 ?>
         <script>
         
-        $(document).ready(function() {
-        setInterval(function() {
-		$("#sensor").load('shelf1_data.php')
-	}, 10000);
-	});
+        function update() {
+        	$.get("shelf1_data.php", function(data) {
+        		$("#sensor").html(data);
+        		window.setTimeout(update, 10000);
+        	});
+        }
+        
+        //$(document).ready(function() {
+        //setInterval(function() {
+	//	$("#sensor").load('shelf1_data.php')
+	//}, 10000);
+	//});
         
         function sendData2(presetID) {
 
