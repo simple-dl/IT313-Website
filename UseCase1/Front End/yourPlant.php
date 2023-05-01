@@ -4,6 +4,7 @@
 <title>Grubbing Greens Homepage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="30">
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -16,13 +17,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
 .hide {display: none}
 </style>
-<script>
-$(document).ready(function() {
-        setInterval(function() {
-                $("#sensor").load('shelf1_data.php')
-        }, 10000);
-});
-</script>
+
+
 </head>
 <body>
 
