@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import mysql.connector
 import requests
 import socket
+from flask_cors import CORS
 
 app = Flask(__name__)
 
