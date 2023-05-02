@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import mysql.connector
 import requests
 import socket
+from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -67,6 +68,7 @@ def get_data():
     return jsonify({'message': 'Data received successfully'})
 
 if __name__ == '__main__':
+    CORS(app)
     app.run(host='0.0.0.0', debug=True)
 
                                                                                    71,0-1        Bot
