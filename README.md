@@ -1,5 +1,3 @@
 # IT313-Website
-<h1> GRUBBIN GREEN </h1> 
-h1 {
-color: green;
-}
+<h1 style='color:red'> GRUBBIN GREEN </h1> 
+
