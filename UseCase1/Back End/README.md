@@ -17,6 +17,16 @@
   <li>Continuous Rotation Servo - FeeTech FS5103R (USED) </li>
   <li>12V 2Amp Power supply with adapter (USED) </li>
   <li> Access Point (USED)  </li>
+  <li> 3-Tier Steel Wire Shelving Unit in Black (USED) </li>
+  <li> Microgreen Tray with Holes (NOT USED) </li>
+  <li> Microgreen Reservoir Tray without Holes (USED) </li>
+  <li> Terrafibre Hemp Grow Mats (10 pack) (USED) </li>
+  <li> Barrina Grow Light Bulbs, Full Spectrum 2FT LED Grow Light (USED) </li>
+  <li> MULTIFAN S7, Quiet USB Cooling Fan, Dual 120mm (NOT USED) </li>
+  <li> Jiffy Seed Starting Clear Humidity Gro-Domes (USED) </li>
+  <li> Plywood sheets (USED) </li>
+  <li> Bag of zipties (USED) </li>
+  <li> Seed bags (radishes, broccoli, cabbage) (USED) </li>
   
 </ul>
 
