@@ -147,7 +147,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         const statusEl = document.getElementById('status2');
         statusEl.textContent = 'Please wait...';
 
-        fetch('http://grubbingreen.com/api', {
+        fetch('//grubbingreen.com/api', {
         method: 'POST',
         headers: {
            'Content-Type': 'application/json'
@@ -183,7 +183,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         const statusEl = document.getElementById('status');
         statusEl.textContent = 'Please wait...';
 
-        fetch('http://grubbingreen.com/api', {
+        fetch('//grubbingreen.com/api', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
