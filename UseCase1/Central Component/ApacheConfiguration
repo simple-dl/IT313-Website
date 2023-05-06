@@ -34,6 +34,13 @@ Include /etc/letsencrypt/options-ssl-apache.conf
 ServerAlias grubbingreen.com
 SSLCertificateFile /etc/letsencrypt/live/grubbingreen.com/fullchain.pem
 SSLCertificateKeyFile /etc/letsencrypt/live/grubbingreen.com/privkey.pem
+WSGIScriptAlias /api /var/www/html/api.wsgi
+<Directory /var/www/html>
+Order allow,deny
+Allow from all
+</Directory>
+ProxyPass /api http://172.31.86.223:5000/api
+ProxyPassReverse /api http://172.31.86.223:5000/api
 </VirtualHost>
 </IfModule>
 <IfModule mod_ssl.c>
@@ -66,6 +73,12 @@ SSLCertificateKeyFile /etc/letsencrypt/live/grubbingreen.com/privkey.pem
         # after it has been globally disabled with "a2disconf".
         #Include conf-available/serve-cgi-bin.conf
 
-
+WSGIScriptAlias /api /var/www/html/api.wsgi
+<Directory /var/www/html>
+Order allow,deny
+Allow from all
+</Directory>
+ProxyPass /api http://172.31.86.223:5000/api
+ProxyPassReverse /api http://172.31.86.223:5000/api
 </VirtualHost>
 </IfModule>
