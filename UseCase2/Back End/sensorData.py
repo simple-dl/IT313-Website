@@ -46,9 +46,10 @@ while True:
     
     print("Temp={0:0.1f}C Humidity={1:0.1f}% Water Status={2} Light Status={3} Lid Status={4}".format(temperature, humidity, water_status, light_status, lid_status))
 
-    else:
-        print("Sensor failure. Check wiring.");
-        time.sleep(3);
+  else:
+    
+    print("Sensor failure. Check wiring.");
+    time.sleep(3);
 
 #Source of the code: https://www.thegeekpub.com/236868/using-the-dht13-temperature-sensor-with-the-raspberry-pi/
       
