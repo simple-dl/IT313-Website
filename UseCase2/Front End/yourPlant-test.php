@@ -158,11 +158,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         .then((response) => response.json())
         .then((data) => {
         if (data.message === 'Success') {
-        statusEl.textContent = 'Initialization successful!';
-        hideButton();
-        setTimeout(() => {
-        statusEl.textContent = '';
-         }, 5000);
+                statusEl.textContent = 'Initialization successful!';
+                hideButton();
+                setTimeout(() => {
+                statusEl.textContent = '';
+                }, 5000);
         } else {
          statusEl.textContent = 'Initialization failed';
          setTimeout(() => {
@@ -172,6 +172,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         })
         .catch((error) => {
         statusEl.textContent = 'Error fetching status: Check if the API servers are running';
+        setCookie("hidden", "false", 30);
          });
       }
 
@@ -196,11 +197,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         .then((response) => response.json())
         .then((data) => {
         if (data.message === 'Success') {
-        statusEl.textContent = 'Initialization successful!';
-        hideButton();
-        setTimeout(() => {
-        statusEl.textContent = '';
-        }, 5000);
+                statusEl.textContent = 'Initialization successful!';
+                hideButton();
+                setTimeout(() => {
+                statusEl.textContent = '';
+                }, 5000);
         } else {
         statusEl.textContent = 'Initialization failed';
         setTimeout(() => {
@@ -210,6 +211,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 })
   .catch((error) => {
         statusEl.textContent = 'Error fetching status: Check if the API servers are running';
+        setCookie("hidden", "false", 30);
         });
                               
         }
