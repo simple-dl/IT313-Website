@@ -4,6 +4,7 @@
 <title>Grubbing Greens Homepage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="30">
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -16,10 +17,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
 .hide {display: none}
 </style>
+
+
 </head>
-<body>
-  
-  <!-- https://phppot.com/jquery/jquery-div-auto-load-and-refresh/ auto refresh-->
+<body onload="checkHidden()">
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -29,9 +30,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="availablePlant.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Available plants</a>
     <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Profile</a>
      <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-display-topright">Logout</a>
-    <!---<link href='https://css.gg/profile.css' rel='stylesheet'> --->
   </div>
-
 <!-- Header -->
 <header class="w3-container w3-green w3-center" style="padding:50px 16px; border:2px solid black;">
   <h1 class="w3-margin w3-jumbo">Your Plants</h1>
@@ -51,27 +50,27 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img class='centerimg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
-                echo  " <p>";
+
                 echo "<div id = 'sensor' class = 'modal-content'>";
-                //include 'shelf1_data.php';
+                include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton' onclick='sendData(1)'>Initiate Preset</button>";
+                echo "<button id='myButton' onclick='sendData(1)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
-                echo " </p>";
-                echo " </figure>";
+                echo "</figure>";
+
         } elseif ($result['preset_id_shelf1'] == 2) {
                 echo "<div class='plantsImg'>";
                 echo " <figure  class = 'radish2' >";
                 echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img class='centerimg' src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
-                echo  " <p>";
-                echo "<div id = 'sensor' class  ='modal-content'>";    
-                //include 'shelf1_data.php';
+
+                echo "<div id = 'sensor' class  ='modal-content'>";
+                include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton' onclick='sendData(2)'>Initiate Preset</button>";
+                echo "<button id='myButton' onclick='sendData(2)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         } elseif ($result['preset_id_shelf1'] == 3) {
                 echo "<div class='plantsImg'>";
@@ -79,13 +78,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 1 <h2>";
                 echo " <img class='centerimg' src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
-                echo  " <p>";
+
                 echo "<div id = 'sensor' class = 'modal-content'>";
-                //include 'shelf1_data.php';
+                include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton' onclick='sendData(3)'>Initiate Preset</button>";
+                echo "<button id='myButton' onclick='sendData(3)'>Initiate Preset</button>";
                 echo "<div id='status'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         }
 
@@ -98,13 +97,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img class='centerimg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
-                echo  " <p>";
+
                 echo "<div id = 'sensor' class = 'modal-content'>";
-                //include 'shelf1_data.php';
+                include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton2' onclick='sendData2(1)'>Initiate Preset</button>";
+                echo "<button id='myButton2' onclick='sendData2(1)'>Initiate Preset</button>";
                 echo "<div id='status2'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         } elseif ($result2['preset_id_shelf2'] == 2) {
                 echo "<div class='plantsImg'>";
@@ -112,13 +111,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img class='centerimg' src='https://cdn.shopify.com/s/files/1/0610/5143/7207/products/broccoli_b0a5486b-cf93-49c1-8471-58a7348127f5_1080x.webp?v=1663860843' alt='Trulli' style='width:220px'              >";
                 echo " <figcaption class='imgtitle'>Your Broccoli</figcaption>";
-                echo  " <p>";
+
                 echo "<div id = 'sensor' class = 'modal-content'>";
-                //include 'shelf1_data.php';
+                include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton2' onclick='sendData2(2)'>Initiate Preset</button>";
+                echo "<button id='myButton2' onclick='sendData2(2)'>Initiate Preset</button>";
                 echo "<div id='status2'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         } elseif ($result2['preset_id_shelf2'] == 3) {
                 echo "<div class='plantsImg'>";
@@ -126,40 +125,29 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 echo "<h2 class='shelves'> Shelf 2 <h2>";
                 echo " <img class='centerimg' src='https://leafproduce.nz/wp-content/uploads/2022/09/living-red-cabbage-microgreens-kerikeri-300x300_240x240.jpg' alt='Trulli' style='width:220px'                >";
                 echo " <figcaption class='imgtitle'>Your Cabbage</figcaption>";
-                echo  " <p>";
+
                 echo "<div id = 'sensor' class = 'modal-content'>";
-                //include 'shelf1_data.php';
+                include 'shelf1_data.php';
                 echo "</div>";
-                echo "<button class='myButton2' onclick='sendData2(3)'>Initiate Preset</button>";
+                echo "<button id='myButton2' onclick='sendData2(3)'>Initiate Preset</button>";
                 echo "<div id='status2'></div>";
-                echo " </p>";
+
                 echo " </figure>";
         }
 ?>
-        <script>
-        
-        function update() {
-        	$.get("shelf1_data.php", function(data) {
-        		$("#sensor").html(data);
-        		window.setTimeout(update, 10000);
-        	});
-        }
-        
-        //$(document).ready(function() {
-        //setInterval(function() {
-	//	$("#sensor").load('shelf1_data.php')
-	//}, 10000);
-	//});
-        
+   <script>
+        let button = document.getElementById("myButton");
+
         function sendData2(presetID) {
 
         var button = document.getElementById('myButton2');
-        button.classList.add('hide');
+        //button.classList.add('hide');
+        hideButton();
 
         const statusEl = document.getElementById('status2');
         statusEl.textContent = 'Please wait...';
 
-        fetch('http://grubbingreen.com/api', {
+        fetch('//grubbingreen.com/api', {
         method: 'POST',
         headers: {
            'Content-Type': 'application/json'
@@ -189,13 +177,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
         function sendData(presetID) {
 
-        var button = document.getElementById('myButton');
-        button.classList.add('hide');
+          var button = document.getElementById('myButton');
+        //button.classList.add('hide');
+        hideButton();
 
         const statusEl = document.getElementById('status');
         statusEl.textContent = 'Please wait...';
 
-        fetch('http://grubbingreen.com/api', {
+        fetch('//grubbingreen.com/api', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
@@ -221,9 +210,41 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   .catch((error) => {
         statusEl.textContent = 'Error fetching status: Check if the API servers are running';
         });
-                    
+                              
         }
+    
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+    function hideButton() {
+    	setCookie("hidden", "true", 30);
+    	button.style.display="none";
+    }
+    function checkHidden() {
+    	var buttonCookie = getCookie("hidden");
+    	
+    	if (buttonCookie == "true") {
+    		button.style.display="none";
+    	}
+    }
        </script>
 
 
 </html>
+
