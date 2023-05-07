@@ -244,7 +244,9 @@ function getCookie(name) {
     	
     	if (buttonCookie == "true") {
     		button.style.display="none";
-    	}
+    	} else {
+                button.style.display="block";  
+        }
     }
        </script>
 
