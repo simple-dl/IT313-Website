@@ -141,8 +141,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         function sendData2(presetID) {
 
         var button = document.getElementById('myButton2');
-        //button.classList.add('hide');
-        hideButton();
+        button.classList.add('hide');
 
         const statusEl = document.getElementById('status2');
         statusEl.textContent = 'Please wait...';
@@ -160,6 +159,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         .then((data) => {
         if (data.message === 'Success') {
         statusEl.textContent = 'Initialization successful!';
+        hideButton();
         setTimeout(() => {
         statusEl.textContent = '';
          }, 5000);
@@ -178,8 +178,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         function sendData(presetID) {
 
           var button = document.getElementById('myButton');
-        //button.classList.add('hide');
-        hideButton();
+        button.classList.add('hide');
+        
 
         const statusEl = document.getElementById('status');
         statusEl.textContent = 'Please wait...';
@@ -197,6 +197,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         .then((data) => {
         if (data.message === 'Success') {
         statusEl.textContent = 'Initialization successful!';
+        hideButton();
         setTimeout(() => {
         statusEl.textContent = '';
         }, 5000);
