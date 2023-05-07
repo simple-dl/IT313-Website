@@ -16,11 +16,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
 .hide {display: none}
+.show {display: block}
 </style>
 
 
 </head>
-<body>
+<body onload="checkHidden()">
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -30,7 +31,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="availablePlant.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Available plants</a>
     <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Profile</a>
      <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-display-topright">Logout</a>
-    <!---<link href='https://css.gg/profile.css' rel='stylesheet'> --->
   </div>
 <!-- Header -->
 <header class="w3-container w3-green w3-center" style="padding:50px 16px; border:2px solid black;">
@@ -92,10 +92,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
          $sql2 = "SELECT preset_id_shelf2 FROM User WHERE username ='".$_SESSION['username']."'";
 
         $result2 = mysqli_fetch_assoc(mysqli_query($conn, $sql2));
- if ($result2['preset_id_shelf2'] == 1) {
-                echo "<div class='plantsImg'>";
-                echo " <figure  class = 'radish2' >";
-                echo "<h2 class='shelves'> Shelf 2 <h2>";
+ if ($result2['preset_id_shelf2'] == 1) {hideButton();
                 echo " <img class='centerimg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyWCHmbP978O9Gagf84MtIpAaLi-fd8ReaZan2jHyIo6Hy5Z0Ss3fzTcwjzvdLiAaOJLg&usqp=CAU' alt='Trulli' style='width:260px'>";
                 echo " <figcaption class='imgtitle'> Your Radish</figcaption>";
 
@@ -137,6 +134,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         }
 ?>
    <script>
+        let button = document.getElementById("myButton");
+
         function sendData2(presetID) {
 
         var button = document.getElementById('myButton2');
@@ -157,10 +156,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         .then((response) => response.json())
         .then((data) => {
         if (data.message === 'Success') {
-        statusEl.textContent = 'Initialization successful!';
-        setTimeout(() => {
-        statusEl.textContent = '';
-         }, 5000);
+                statusEl.textContent = 'Initialization successful!';
+                setTimeout(() => {
+                statusEl.textContent = '';
+                }, 5000);
+                hideButton();
         } else {
          statusEl.textContent = 'Initialization failed';
          setTimeout(() => {
@@ -170,6 +170,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         })
         .catch((error) => {
         statusEl.textContent = 'Error fetching status: Check if the API servers are running';
+        setCookie("hidden", "false", 30);
          });
       }
 
@@ -177,6 +178,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
           var button = document.getElementById('myButton');
         button.classList.add('hide');
+        
 
         const statusEl = document.getElementById('status');
         statusEl.textContent = 'Please wait...';
@@ -193,10 +195,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         .then((response) => response.json())
         .then((data) => {
         if (data.message === 'Success') {
-        statusEl.textContent = 'Initialization successful!';
-        setTimeout(() => {
-        statusEl.textContent = '';
-        }, 5000);
+                statusEl.textContent = 'Initialization successful!';
+                setTimeout(() => {
+                statusEl.textContent = '';
+                }, 5000);
+                hideButton();
         } else {
         statusEl.textContent = 'Initialization failed';
         setTimeout(() => {
@@ -206,14 +209,45 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 })
   .catch((error) => {
         statusEl.textContent = 'Error fetching status: Check if the API servers are running';
+        setCookie("hidden", "false", 30);
         });
                               
         }
+    
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+    function hideButton() {
+    	setCookie("hidden", "true", 30);
+    	button.classList.add('hide');
+    }
+    function checkHidden() {
+    	var buttonCookie = getCookie("hidden");
+    	
+    	if (buttonCookie == "true") {
+    		hideButton();
+    	} else {
+                button.classList.add('show'); 
+        }
+    }
        </script>
 
 
 </html>
-                                                                                                                                                                                         222,2         Bot                                                                                           
-          
-                                                                                                                                                                                         106,2         39%                                                         
-          
+
