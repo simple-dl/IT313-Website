@@ -21,7 +21,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 
 </head>
-<body onload="checkHidden()">
+<body>
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -160,7 +160,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 setTimeout(() => {
                 statusEl.textContent = '';
                 }, 5000);
-                hideButton();
         } else {
          statusEl.textContent = 'Initialization failed';
          setTimeout(() => {
@@ -170,8 +169,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         })
         .catch((error) => {
         statusEl.textContent = 'Error fetching status: Check if the API servers are running';
-        setCookie("hidden", "false", 30);
-         });
+        
       }
 
         function sendData(presetID) {
@@ -199,7 +197,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 setTimeout(() => {
                 statusEl.textContent = '';
                 }, 5000);
-                hideButton();
+                
         } else {
         statusEl.textContent = 'Initialization failed';
         setTimeout(() => {
@@ -209,8 +207,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 })
   .catch((error) => {
         statusEl.textContent = 'Error fetching status: Check if the API servers are running';
-        setCookie("hidden", "false", 30);
-        });
+      
                               
         }
     
