@@ -22,8 +22,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </head>
 <body>
 
-  <!-- https://phppot.com/jquery/jquery-div-auto-load-and-refresh/ auto refresh-->
-
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-card w3-left-align w3-large" style="background-color:rgb(9, 102, 29);color:white">
