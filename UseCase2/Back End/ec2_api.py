@@ -16,6 +16,7 @@ db = mysql.connector.connect(
 api_endpoint = "http://166.159.66.153:5000"
 api_endpoint2 = "http://166.159.66.153:5001"
 
+# This code is the relevant to Use Case #1
 @app.route('/api', methods=['POST'])
 def send_data():
 
@@ -41,8 +42,7 @@ def send_data():
         print("Failed to send data")
         message = "Initialization failed"
 
-    return jsonify({'message': message})
-
+# This code is the relevant to Use Case #2
 @app.route('/data', methods=['POST'])
 def get_data():
 
@@ -71,8 +71,4 @@ if __name__ == '__main__':
     CORS(app)
     app.run(host='0.0.0.0', debug=True)
 
-                                                                                   71,0-1        Bot
-
-
-
-
+    return jsonify({'message': message})
