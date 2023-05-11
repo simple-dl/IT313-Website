@@ -16,6 +16,7 @@ db = mysql.connector.connect(
 api_endpoint = "http://166.159.66.153:5000"
 api_endpoint2 = "http://166.159.66.153:5001"
 
+# This code is the relevant to Use Case #1
 @app.route('/api', methods=['POST'])
 def send_data():
 
@@ -40,5 +41,34 @@ def send_data():
     else:
         print("Failed to send data")
         message = "Initialization failed"
+
+# This code is the relevant to Use Case #2
+@app.route('/data', methods=['POST'])
+def get_data():
+
+    data = request.get_json()
+
+    temperature = data['temperature']
+    humidity = data['humidity']
+
+    cursor = db.cursor()
+
+    sql = "UPDATE shelf_reading SET humidity_percentage = %s, temperature_C = %s WHERE username = 'test4'"
+    val = (humidity, temperature)
+    cursor.execute(sql, val)
+
+    db.commit()
+    cursor.close()
+
+    print('Received POST request for data')
+
+    print(temperature)
+    print(humidity)
+
+    return jsonify({'message': 'Data received successfully'})
+
+if __name__ == '__main__':
+    CORS(app)
+    app.run(host='0.0.0.0', debug=True)
 
     return jsonify({'message': message})
